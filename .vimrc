@@ -35,6 +35,8 @@ set numberwidth=5
 syntax enable
 set background=dark
 colorscheme solarized
+" no italics
+let g:solarized_italic=0
 
 " PACKAGES
 " Pathogen
@@ -47,7 +49,13 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree C:\Users\ajohnston\java | endif
 
 " CtrlP
+" open
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
-noremap <C-a> :CtrlP C:\Users\ajohnston\java<CR>
+" clear cache with Ctrl + F7
+nmap <C-F7> :CtrlPClearCache<CR>
+" search from current directory instead of project root
+let g:ctrlp_working_path_mode = 0
+" ignore
+set wildignore+=*\\tmp\\**,*.swp,*.zip,*.exe
+set wildignore+=*\\images\\**,*\\node_modules\\**,*\\bower_components\\**,*\\external_components\\**
