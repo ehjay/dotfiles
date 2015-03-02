@@ -38,15 +38,15 @@ colorscheme solarized
 " no italics
 let g:solarized_italic=0
 
+" :e. (explorer mode)
+" uncomment below to get tree structure
+" let g:netrw_liststyle=3
+
 " PACKAGES
 " Pathogen
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-" NERDtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree C:\Users\ajohnston\java | endif
 
 " CtrlP
 " open
