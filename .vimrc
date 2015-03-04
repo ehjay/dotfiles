@@ -5,9 +5,22 @@ cd C:\Users\ajohnston\java
 syntax on
 
 """ KEY REMAP
+" use space to start a command
+nnoremap <Space> :
+
+" exit insert mode with quick jk
+:imap jk <Esc>
+
+" stay in visual mode after changing indent
+vmap > >gv
+vmap < <gv
+
 " insert lines
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" remove whitespace and save
+map <S-Space> :%s/\s\+$//<enter> :w<enter>
 
 " backspace
 set backspace=indent,eol,start
@@ -28,7 +41,7 @@ set softtabstop=2
 "set tabstop=8
 
 " auto indentation
-:filetype indent on
+filetype indent on
 set autoindent
 set smartindent
 
@@ -69,6 +82,9 @@ execute pathogen#infect()
 filetype plugin indent on
 
 "" CtrlP
+" number of results
+let g:ctrlp_max_height = 30
+
 " open
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
