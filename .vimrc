@@ -11,13 +11,16 @@ nnoremap <Space> :
 " exit insert mode with quick jk
 :imap jk <Esc>
 
-" stay in visual mode after changing indent
-vmap > >gv
-vmap < <gv
+" save with Ctrl+S
+nmap <C-S> :w<enter>
 
 " insert lines
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" stay in visual mode after changing indent
+vmap > >gv
+vmap < <gv
 
 " remove whitespace and save
 map <S-Space> :%s/\s\+$//<enter> :w<enter>
@@ -56,13 +59,13 @@ set number
 set numberwidth=5
 
 """ THEME
+" no italics
+let g:solarized_italic=0
+
 " colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
-
-" no italics
-let g:solarized_italic=0
 
 " highlight trailing whitespace (but not in insert mode)
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
