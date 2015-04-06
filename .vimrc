@@ -28,6 +28,9 @@ map <S-Space> :%s/\s\+$//<enter> :w<enter>
 " backspace
 set backspace=indent,eol,start
 
+" add GO every 10 lines
+map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
+
 """ OPTIONS
 "" Indentation
 " spaces
