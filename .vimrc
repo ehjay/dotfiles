@@ -68,6 +68,12 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+" move windows with CTRL + arrow key
+nmap <silent> <C-Up> :wincmd K<CR>
+nmap <silent> <C-Down> :wincmd J<CR>
+nmap <silent> <C-Left> :wincmd H<CR>
+nmap <silent> <C-Right> :wincmd L<CR>
+
 " cycle through open windows
 map <F6> <C-W>w
 
