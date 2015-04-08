@@ -1,10 +1,10 @@
-""" START FROM
+" START FROM
 cd C:\Users\ajohnston\java
 
-""" ALLOW SYNTAX HIGHLIGHTING
+" ALLOW SYNTAX HIGHLIGHTING
 syntax on
 
-""" KEY REMAP
+" KEY REMAP
 " use space to start a command
 nnoremap <Space> :
 
@@ -31,8 +31,8 @@ set backspace=indent,eol,start
 " add GO every 10 lines
 map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
 
-""" OPTIONS
-"" Indentation
+" OPTIONS
+" Indentation
 " spaces
 set expandtab
 set shiftwidth=2
@@ -61,7 +61,25 @@ set hlsearch
 set number
 set numberwidth=5
 
-""" THEME
+" WINDOWS
+" switch windows with ALT + arrow key
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" cycle through open windows
+map <F6> <C-W>w
+
+" quickly resize windows horizontally with +/-
+map - <C-W>-
+map + <C-W>+
+
+" quickly resize windows vertically with ALT+SHIFT+</>
+map <M-<> <C-W><
+map <M->> <C-W>>
+
+" THEME
 " no italics
 let g:solarized_italic=0
 
@@ -78,16 +96,16 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-""" EXPLORER MODE :e.
+" EXPLORER MODE :e.
 " uncomment below to get tree structure
 " let g:netrw_liststyle=3
 
-""" PACKAGES
-"" Pathogen
+" PACKAGES
+" Pathogen
 execute pathogen#infect()
 filetype plugin indent on
 
-"" CtrlP
+" CtrlP
 " number of results
 let g:ctrlp_max_height = 30
 
