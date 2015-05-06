@@ -81,10 +81,6 @@ map <F6> <C-W>w
 map - <C-W>-
 map + <C-W>+
 
-" quickly resize windows vertically with ALT+SHIFT+</>
-map <M-<> <C-W><
-map <M->> <C-W>>
-
 " THEME
 " no italics
 let g:solarized_italic=0
