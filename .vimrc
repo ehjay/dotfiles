@@ -38,23 +38,35 @@ map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
 " INDENTATION
 " 2 spaces by default
 " toggle between spaces and tabs with F9
-let my_tab=2
+let short_width=2
+let long_width=4
+let current_spacing="SHORT"
+
 set expandtab
-execute "set shiftwidth=".my_tab
-execute "set softtabstop=".my_tab
+execute "set shiftwidth=".short_width
+execute "set softtabstop=".short_width
 
 function! TabToggle()
-  if &expandtab
-    " tabs
+  if g:current_spacing == "SHORT"
+    " set long
+    set expandtab
+    execute "set shiftwidth=".g:long_width
+    execute "set softtabstop=".g:long_width
+    let g:current_spacing="LONG"
+  elseif g:current_spacing == "LONG"
+    " set tab
     set noexpandtab
     set shiftwidth=8
     set softtabstop=0
-  else
-    " spaces
+    let g:current_spacing="TAB"
+  elseif g:current_spacing == "TAB"
+    " set short
     set expandtab
-    execute "set shiftwidth=".g:my_tab
-    execute "set softtabstop=".g:my_tab
+    execute "set shiftwidth=".g:short_width
+    execute "set softtabstop=".g:short_width
+    let g:current_spacing="SHORT"
   endif
+  echo "current spacing scheme is: ".g:current_spacing
 endfunction
 
 nmap <F9> mz:execute TabToggle()<CR>'z
