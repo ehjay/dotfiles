@@ -1,5 +1,9 @@
 " START FROM
-cd C:\Users\ajohnston\java
+if has("unix")
+  cd ~/workspace
+else
+  cd C:\Users\ajohnston\java
+endif
 
 " ALLOW SYNTAX HIGHLIGHTING
 syntax on
@@ -31,20 +35,29 @@ set backspace=indent,eol,start
 " add GO every 10 lines
 map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
 
-" OPTIONS
-" Indentation
-" spaces
+" INDENTATION
+" 2 spaces by default
+" toggle between spaces and tabs with F9
+let my_tab=2
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+execute "set shiftwidth=".my_tab
+execute "set softtabstop=".my_tab
 
-" tabs
-"set noexpandtab
-"set copyindent
-"set preserveindent
-"set softtabstop=0
-"set shiftwidth=8
-"set tabstop=8
+function! TabToggle()
+  if &expandtab
+    " tabs
+    set noexpandtab
+    set shiftwidth=8
+    set softtabstop=0
+  else
+    " spaces
+    set expandtab
+    execute "set shiftwidth=".g:my_tab
+    execute "set softtabstop=".g:my_tab
+  endif
+endfunction
+
+nmap <F9> mz:execute TabToggle()<CR>'z
 
 " auto indentation
 filetype indent on
