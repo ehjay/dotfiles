@@ -152,4 +152,4 @@ let g:ctrlp_working_path_mode = 0
 
 " ignore
 set wildignore+=*\\tmp\\**,*.swp,*.zip,*.exe
-set wildignore+=*\\images\\**,*\\node_modules\\**,*\\bower_components\\**,*\\external_components\\**
+set wildignore+=*\\images\\**,*\\node_modules\\**,*\\bower_components\\**
