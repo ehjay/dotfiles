@@ -50,3 +50,8 @@ doskey stdiff = mkdir %DIFF_DIR% 2$g NULL ^& svn di %ST_API% $g %ST_API_DIFF% ^&
 doskey sadiff = mkdir %DIFF_DIR% 2$g NULL ^& svn di %SA_API% $g %SA_API_DIFF% ^& echo created %SA_API_DIFF% ^& svn di %SA_WWW% $g %SA_WWW_DIFF% ^& echo created %SA_WWW_DIFF%
 doskey bdiff = mkdir %DIFF_DIR% 2$g NULL ^& svn di %B_API% $g %B_API_DIFF% ^& echo created %B_API_DIFF% ^& svn di %B_WWW% $g %B_WWW_DIFF% ^& echo created %B_WWW_DIFF%
 doskey alldiff = mkdir %DIFF_DIR% 2$g NULL ^& svn di %F_API% $g %F_API_DIFF% ^& echo created %F_API_DIFF% ^& svn di %F_WWW% $g %F_WWW_DIFF% ^& echo created %F_WWW_DIFF% ^& svn di %ST_API% $g %ST_API_DIFF% ^& echo created %ST_API_DIFF% ^& svn di %ST_WWW% $g %ST_WWW_DIFF% ^& echo created %ST_WWW_DIFF% ^& svn di %SA_API% $g %SA_API_DIFF% ^& echo created %SA_API_DIFF% ^& svn di %SA_WWW% $g %SA_WWW_DIFF% ^& echo created %SA_WWW_DIFF% ^& svn di %B_API% $g %B_API_DIFF% ^& echo created %B_API_DIFF% ^& svn di %B_WWW% $g %B_WWW_DIFF% ^& echo created %B_WWW_DIFF%
+
+:: run www server
+doskey strun = cd %ST_WWW% ^& grunt server
+doskey sarun = cd %SA_WWW% ^& grunt server
+doskey brun = cd %B_WWW% ^& grunt server
