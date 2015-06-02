@@ -1,9 +1,8 @@
 :: variables
 set HOME=C:\Users\ajohnston
 
-set DOT=%JAVA%\dotfiles
-
 set JAVA=%HOME%\java
+set DOT=%JAVA%\dotfiles
 set F_API=%JAVA%\foundation-api
 set F_WWW=%JAVA%\foundation-www
 set ST_API=%JAVA%\stratascape-api
@@ -35,6 +34,9 @@ doskey saapi = cd %SA_API%
 doskey sawww = cd %SA_WWW%
 doskey bapi = cd %B_API%
 doskey bwww = cd %B_WWW%
+
+:: search subdirectories
+doskey s = findstr /s /i /c:"$*" *.*
 
 :: svn up
 doskey fup = svn up %F_API% ^& svn up %F_WWW%
