@@ -1,28 +1,28 @@
 :: variables
-setlocal HOME=C:\Users\ajohnston
+set HOME=C:\Users\ajohnston
 
-setlocal DOT=%JAVA%\dotfiles
+set DOT=%JAVA%\dotfiles
 
-setlocal JAVA=%HOME%\java
-setlocal F_API=%JAVA%\foundation-api
-setlocal F_WWW=%JAVA%\foundation-www
-setlocal ST_API=%JAVA%\stratascape-api
-setlocal ST_WWW=%JAVA%\stratascape-www
-setlocal SA_API=%JAVA%\salesscape-api
-setlocal SA_WWW=%JAVA%\salesscape-www
-setlocal B_API=%JAVA%\bankchoice-api
-setlocal B_WWW=%JAVA%\bankchoice-www
+set JAVA=%HOME%\java
+set F_API=%JAVA%\foundation-api
+set F_WWW=%JAVA%\foundation-www
+set ST_API=%JAVA%\stratascape-api
+set ST_WWW=%JAVA%\stratascape-www
+set SA_API=%JAVA%\salesscape-api
+set SA_WWW=%JAVA%\salesscape-www
+set B_API=%JAVA%\bankchoice-api
+set B_WWW=%JAVA%\bankchoice-www
 
-setlocal DESKTOP=%HOME%\Desktop
-setlocal DIFF_DIR=%DESKTOP%\diff
-setlocal F_API_DIFF=%DIFF_DIR%\found-api.diff
-setlocal F_WWW_DIFF=%DIFF_DIR%\found-www.diff
-setlocal ST_API_DIFF=%DIFF_DIR%\strata-api.diff
-setlocal ST_WWW_DIFF=%DIFF_DIR%\strata-www.diff
-setlocal SA_API_DIFF=%DIFF_DIR%\sales-api.diff
-setlocal SA_WWW_DIFF=%DIFF_DIR%\sales-www.diff
-setlocal B_API_DIFF=%DIFF_DIR%\bank-api.diff
-setlocal B_WWW_DIFF=%DIFF_DIR%\bank-www.diff
+set DESKTOP=%HOME%\Desktop
+set DIFF_DIR=%DESKTOP%\diff
+set F_API_DIFF=%DIFF_DIR%\found-api.diff
+set F_WWW_DIFF=%DIFF_DIR%\found-www.diff
+set ST_API_DIFF=%DIFF_DIR%\strata-api.diff
+set ST_WWW_DIFF=%DIFF_DIR%\strata-www.diff
+set SA_API_DIFF=%DIFF_DIR%\sales-api.diff
+set SA_WWW_DIFF=%DIFF_DIR%\sales-www.diff
+set B_API_DIFF=%DIFF_DIR%\bank-api.diff
+set B_WWW_DIFF=%DIFF_DIR%\bank-www.diff
 
 :: cd
 doskey ~ = cd %HOME%
