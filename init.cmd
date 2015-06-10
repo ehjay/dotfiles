@@ -40,7 +40,7 @@ doskey s = findstr /s /i /c:"$*" *.*
 
 :: svn status
 doskey fstat = echo. ^& echo foundation-api status:^& echo. ^& svn st %F_API% ^& echo. ^& echo foundation-www status:^& echo. ^& svn st %F_WWW%
-doskey ststat = echo. ^& echo stratascape-api status:^& echo. ^& svn st %ST_API% ^& echo. ^& echo stratascape-api status:^& echo. ^& svn st %ST_WWW%
+doskey ststat = echo. ^& echo stratascape-api status:^& echo. ^& svn st %ST_API% ^& echo. ^& echo stratascape-www status:^& echo. ^& svn st %ST_WWW%
 doskey sastat = echo. ^& echo salesscape-api status:^& echo. ^& svn st %SA_API% ^& echo. ^& echo salesscape-www status:^& echo. ^& svn st %SA_WWW%
 doskey bstat = echo. ^& echo bankchoice-api status:^& echo. ^& svn st %B_API% ^& echo. ^& echo bankchoice-www status:^& echo. ^& svn st %B_WWW%
 doskey allstat = echo. ^& echo foundation-api status:^& echo. ^& svn st %F_API% ^& echo. ^& echo foundation-www status:^& echo. ^& svn st %F_WWW% ^& echo. ^& echo stratascape-api status:^& echo. ^& svn st %ST_API% ^& echo. ^& echo stratascape-www status:^& echo. ^& svn st %ST_WWW% ^& echo. ^& echo salesscape-api status:^& echo. ^& svn st %SA_API% ^& echo. ^& echo salesscape-www status:^& echo. ^& svn st %SA_WWW% ^& echo. ^& echo bankchoice-api status:^& echo. ^& svn st %B_API% ^& echo. ^& echo bankchoice-www status:^& echo. ^& svn st %B_WWW%
