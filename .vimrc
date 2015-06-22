@@ -14,6 +14,7 @@ nnoremap <Space> :
 
 " exit insert mode with quick jk
 :imap jk <Esc>
+:vmap jk <Esc>
 
 " save with Ctrl+S
 nmap <C-S> :w<enter>
