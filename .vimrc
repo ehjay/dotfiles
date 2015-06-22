@@ -12,9 +12,9 @@ syntax on
 " use space to start a command
 nnoremap <Space> :
 
-" exit insert mode with quick jk
-:imap jk <Esc>
-:vmap jk <Esc>
+" exit insert mode with quick io
+:imap io <Esc>
+:vmap io <Esc>
 
 " save with Ctrl+S
 nmap <C-S> :w<enter>
