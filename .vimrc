@@ -36,15 +36,15 @@ set backspace=indent,eol,start
 map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
 
 " INDENTATION
-" 2 spaces by default
+" 4 spaces at startup
 " toggle between spaces and tabs with F9
 let short_width=2
 let long_width=4
-let current_spacing="SHORT"
+let current_spacing="LONG"
 
 set expandtab
-execute "set shiftwidth=".short_width
-execute "set softtabstop=".short_width
+execute "set shiftwidth=".g:long_width
+execute "set softtabstop=".g:long_width
 
 function! TabToggle()
   if g:current_spacing == "SHORT"
@@ -101,6 +101,22 @@ nmap <silent> <C-Right> :wincmd L<CR>
 
 " cycle through open windows
 map <F6> <C-W>w
+
+" TABS
+if v:version >= 700 && has('gui_running')
+  " go to first and last tabs
+  nnoremap <C-Home>  :tabfirst<CR>
+  nnoremap <C-End>   :tablast<CR>
+
+  " move tab to start
+  nnoremap <C-S-Home> :tabmove 0<CR>
+  " move tab to end
+  nnoremap <C-S-End> :tabmove<CR>
+  " move tab left
+  nnoremap <C-S-PageUp> :execute 'tabmove ' . (tabpagenr()-2)<CR>
+  " move tab right
+  nnoremap <C-S-PageDown> :execute 'tabmove ' . tabpagenr()<CR>
+endif
 
 " quickly resize windows horizontally with +/-
 map - <C-W>-
