@@ -142,7 +142,7 @@ let g:solarized_italic=0
 " colorscheme
 syntax enable
 set background=dark
-colorscheme base16-codeschool
+colorscheme apprentice
 
 " highlight trailing whitespace (but not in insert mode)
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
