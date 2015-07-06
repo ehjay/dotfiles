@@ -5,6 +5,13 @@ else
   cd C:\Users\ajohnston\java
 endif
 
+" TMUX or other parent process
+"" use 256 screen
+if !has("gui_running")
+    set t_Co=256
+    set term=screen-256color
+endif
+
 " CYGWIN
 "" use block cursor
 let &t_ti.="\e[1 q"
