@@ -1,3 +1,7 @@
+CursorType=block
+Font=Consolas
+FontIsBold=yes
+FontHeight=12
 Term=xterm-256color
 Black=21,21,21
 BoldBlack=80,80,80
