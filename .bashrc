@@ -1,12 +1,20 @@
-# load the bash_aliases file
-
+# load aliases file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# add below to the cygwin .bashrc
+## Cygwin
 
-export TERM=xterm-256color
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# remove ending carriage returns
+function rmr ()
+{
+    cat "$1" | sed 's/\r$//' > "$1"
+}
+
+# convenience methods
 
 WORKSPACE='/c/Users/ajohnston/java'
 STAPI='/stratascape-api'
@@ -15,6 +23,8 @@ BAPI='/bankchoice-api'
 STWWW='/stratascape-www'
 SAWWW='/salesscape-www'
 BWWW='/bankchoice-www'
+DOT='/dotfiles'
+MISC='/misc'
 
 function go ()
 {
@@ -37,12 +47,25 @@ function go ()
         bwww)
             cd ${WORKSPACE}${BWWW}
             ;;
+        dot)
+            cd ${WORKSPACE}${DOT}
+            ;;
+        misc)
+            cd ${WORKSPACE}${MISC}
+            ;;
         *)
             cd ${WORKSPACE}
     esac
 }
 
 DESKTOP='/c/Users/ajohnston/Desktop'
+
+# copy to desktop
+function cpdesk ()
+{
+    cp $1 ${DESKTOP}
+}
+
 DIFFDIR=${DESKTOP}'/diff'
 
 function allup ()
@@ -170,10 +193,4 @@ function bu ()
         *)
             echo 'Please enter: st, sa, b'
     esac
-}
-
-# copy to desktop
-function cpdesk ()
-{
-    cp $1 ${DESKTOP}
 }
