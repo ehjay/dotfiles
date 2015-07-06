@@ -1,8 +1,12 @@
+# display
 CursorType=block
 Font=Consolas
 FontIsBold=yes
 FontHeight=12
 Term=xterm-256color
+
+# base16-default colorscheme
+# https://github.com/oumu/mintty-color-schemes/
 Black=21,21,21
 BoldBlack=80,80,80
 Red=172,65,66
