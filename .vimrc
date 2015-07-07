@@ -1,5 +1,8 @@
 " START FROM
-if has("unix")
+if has("win32unix")
+  "only in Cygwin
+  cd /c/Users/ajohnston/java
+elseif has("unix")
   cd ~/workspace
 else
   cd C:\Users\ajohnston\java
