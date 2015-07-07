@@ -137,13 +137,11 @@ if v:version >= 700 && has('gui_running')
   nnoremap <C-S-PageDown> :execute 'tabmove ' . tabpagenr()<CR>
 endif
 
-" quickly resize windows horizontally with +/-
-map - <C-W>-
-map + <C-W>+
-
-" quickly resize windows vertically with ALT+SHIFT+</>
-map <M-<> <C-W><
-map <M->> <C-W>>
+" quickly resize windows
+nmap J <C-W>-
+nmap K <C-W>+
+nmap H <C-W><
+nmap L <C-W>>
 
 " THEME
 " no italics
