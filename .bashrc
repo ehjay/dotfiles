@@ -11,7 +11,7 @@ fi
 # remove ending carriage returns
 function rmr ()
 {
-    cat "$1" | sed 's/\r$//' > "$1"
+    cat $1 | sed $'s/\r$//' > $1
 }
 
 # convenience methods
