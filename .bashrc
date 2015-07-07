@@ -34,7 +34,7 @@ function lsns ()
     tasklist | grep node.exe
 }
 
-# list node server
+# kill node server
 function killns ()
 {
     PID=$(lsns | sed 's/[a-z.]\+\s\+\([0-9]\+\).*/\1/')
@@ -147,7 +147,7 @@ function vod ()
 
 GRADLEECLIPSE="cmd /c gradle eclipse"
 
-# grunt server
+# gradle eclipse
 function ge ()
 {
     case "$1" in
