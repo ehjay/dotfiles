@@ -45,9 +45,11 @@ function killns ()
 # convenience methods
 
 WORKSPACE='/c/Users/ajohnston/java'
+FAPI='/foundation-api'
 STAPI='/stratascape-api'
 SAAPI='/salesscape-api'
 BAPI='/bankchoice-api'
+FWWW='/foundation-www'
 STWWW='/stratascape-www'
 SAWWW='/salesscape-www'
 BWWW='/bankchoice-www'
@@ -57,6 +59,9 @@ MISC='/misc'
 function go ()
 {
     case "$1" in
+        fapi)
+            cd ${WORKSPACE}${FAPI}
+            ;;
         stapi)
             cd ${WORKSPACE}${STAPI}
             ;;
@@ -65,6 +70,9 @@ function go ()
             ;;
         bapi)
             cd ${WORKSPACE}${BAPI}
+            ;;
+        fwww)
+            cd ${WORKSPACE}${FWWW}
             ;;
         stwww)
             cd ${WORKSPACE}${STWWW}
@@ -98,21 +106,45 @@ DIFFDIR=${DESKTOP}'/diff'
 
 function allup ()
 {
+    svn up ${WORKSPACE}${FAPI}
     svn up ${WORKSPACE}${STAPI}
     svn up ${WORKSPACE}${SAAPI}
     svn up ${WORKSPACE}${BAPI}
+    svn up ${WORKSPACE}${FWWW}
     svn up ${WORKSPACE}${STWWW}
     svn up ${WORKSPACE}${SAWWW}
     svn up ${WORKSPACE}${BWWW}
+}
+
+function allst ()
+{
+    echo ${WORKSPACE}${FAPI}
+    svn st ${WORKSPACE}${FAPI}
+    echo ${WORKSPACE}${STAPI}
+    svn st ${WORKSPACE}${STAPI}
+    echo ${WORKSPACE}${SAAPI}
+    svn st ${WORKSPACE}${SAAPI}
+    echo ${WORKSPACE}${BAPI}
+    svn st ${WORKSPACE}${BAPI}
+    echo ${WORKSPACE}${FWWW}
+    svn st ${WORKSPACE}${FWWW}
+    echo ${WORKSPACE}${STWWW}
+    svn st ${WORKSPACE}${STWWW}
+    echo ${WORKSPACE}${SAWWW}
+    svn st ${WORKSPACE}${SAWWW}
+    echo ${WORKSPACE}${BWWW}
+    svn st ${WORKSPACE}${BWWW}
 }
 
 function alldiff ()
 {
     rm -rf ${DIFFDIR}
     mkdir ${DIFFDIR}
+    svn diff ${WORKSPACE}${FAPI} > ${DIFFDIR}${FAPI}.diff
     svn diff ${WORKSPACE}${STAPI} > ${DIFFDIR}${STAPI}.diff
     svn diff ${WORKSPACE}${SAAPI} > ${DIFFDIR}${SAAPI}.diff
     svn diff ${WORKSPACE}${BAPI} > ${DIFFDIR}${BAPI}.diff
+    svn diff ${WORKSPACE}${FWWW} > ${DIFFDIR}${FWWW}.diff
     svn diff ${WORKSPACE}${STWWW} > ${DIFFDIR}${STWWW}.diff
     svn diff ${WORKSPACE}${SAWWW} > ${DIFFDIR}${SAWWW}.diff
     svn diff ${WORKSPACE}${BWWW} > ${DIFFDIR}${BWWW}.diff
@@ -122,6 +154,9 @@ function alldiff ()
 function vod ()
 {
     case "$1" in
+        fapi)
+            vim ${DIFFDIR}${FAPI}.diff
+            ;;
         stapi)
             vim ${DIFFDIR}${STAPI}.diff
             ;;
@@ -130,6 +165,9 @@ function vod ()
             ;;
         bapi)
             vim ${DIFFDIR}${BAPI}.diff
+            ;;
+        fwww)
+            vim ${DIFFDIR}${FWWW}.diff
             ;;
         stwww)
             vim ${DIFFDIR}${STWWW}.diff
