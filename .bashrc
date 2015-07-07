@@ -14,6 +14,34 @@ function rmr ()
     cat $1 | sed $'s/\r$//' > $1
 }
 
+# show process with port number
+function lsport ()
+{
+    netstat -ano | grep :$1
+}
+
+# kill a process by port number
+function killport ()
+{
+    PID=$(lsport $1 | sed 's/.*\s\+\([0-9]\+\)$/\1/')
+    echo 'Killing PID: '${PID}
+    taskkill /F /PID ${PID}
+}
+
+# list node server
+function lsns ()
+{
+    tasklist | grep node.exe
+}
+
+# list node server
+function killns ()
+{
+    PID=$(lsns | sed 's/[a-z.]\+\s\+\([0-9]\+\).*/\1/')
+    echo 'Killing PID: '${PID}
+    taskkill /F /PID ${PID}
+}
+
 # convenience methods
 
 WORKSPACE='/c/Users/ajohnston/java'
@@ -145,8 +173,8 @@ function ge ()
 
 GRUNTSERVER="cmd /c grunt server"
 
-# grunt server
-function gs ()
+# node server
+function ns ()
 {
     case "$1" in
         st)
