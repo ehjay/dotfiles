@@ -25,6 +25,9 @@ let &t_te.="\e[0 q"
 " ALLOW SYNTAX HIGHLIGHTING
 syntax on
 
+" No line wrapping, better for splits
+set nowrap
+
 " KEY REMAP
 " use space to start a command
 nnoremap <Space> :
