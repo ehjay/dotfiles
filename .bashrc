@@ -8,6 +8,10 @@ fi
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
+# we use Ctrl + L for panes in tmux
+# use Esc-C to clear console
+alias cls='echo -e "\033c"'
+
 # remove ending carriage returns
 function rmr ()
 {
