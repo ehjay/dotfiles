@@ -3,7 +3,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# may cause problems with Cygwin
 alias tmux="tmux -2"
 
 ## Cygwin
