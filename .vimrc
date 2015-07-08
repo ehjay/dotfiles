@@ -17,10 +17,12 @@ endif
 
 " CYGWIN
 "" use block cursor
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+if has("win32unix")
+  let &t_ti.="\e[1 q"
+  let &t_SI.="\e[5 q"
+  let &t_EI.="\e[1 q"
+  let &t_te.="\e[0 q"
+endif
 
 " ALLOW SYNTAX HIGHLIGHTING
 syntax on
