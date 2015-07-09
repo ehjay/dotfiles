@@ -48,6 +48,21 @@ function killns ()
     taskkill /F /PID ${PID}
 }
 
+# find TypeScript files
+function findts ()
+{
+    find . -name '*.ts' -type f -not -path '*typings*' -printf "%f\n"
+}
+
+# tsc watch
+function tscwatch ()
+{
+    echo "Found TypeScript files: "
+    findts | tee ts-files.txt
+    tsc --watch -m commonjs -t es5 --emitDecoratorMetadata @ts-files.txt
+    rm ts-files.txt
+}
+
 # convenience methods
 
 WORKSPACE='/c/Users/ajohnston/java'
