@@ -60,7 +60,6 @@ function tscwatch ()
     echo "Found TypeScript files: "
     findts | tee ts-files.txt
     tsc --watch -m commonjs -t es5 --emitDecoratorMetadata @ts-files.txt
-    rm ts-files.txt
 }
 
 # convenience methods
