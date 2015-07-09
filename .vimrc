@@ -42,6 +42,10 @@ nnoremap <Space> :
 " save with Ctrl+S
 nmap <C-S> :w<enter>
 
+" yank and paste with system clipboard
+vmap Y "*y
+nmap P "*p
+
 " insert lines
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
