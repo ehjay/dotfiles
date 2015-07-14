@@ -51,7 +51,7 @@ function killns ()
 # find TypeScript files
 function findts ()
 {
-    find . -name '*.ts' -type f -not -path '*typings*' -printf "%f\n"
+    find . -name '*.ts' -type f -not -path '*typings*' -printf "%p\n"
 }
 
 # tsc watch
@@ -59,7 +59,7 @@ function tscwatch ()
 {
     echo "Found TypeScript files: "
     findts | tee ts-files.txt
-    tsc --watch -m commonjs -t es5 --emitDecoratorMetadata @ts-files.txt
+    tsc --watch -m commonjs -t es5 --emitDecoratorMetadata @ts-files.txt --rootDir ts --outDir js
 }
 
 # convenience methods
