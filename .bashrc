@@ -1,7 +1,30 @@
-# load aliases file
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+# screen brightness
+function dim ()
+{
+    local -i input=10#$1
+    if ((input < 50 ))
+    then
+        echo "Input must be greater than 50"
+        return
+    elif ((input > 100))
+    then
+        echo "Input must be less than 100"
+        return
+    fi
+
+    pkill xflux
+    BRIGHTNESS=`echo $1/100 | bc -l`
+    echo 'Changing brightness to '${BRIGHTNESS}
+    xrandr --output VGA1 --brightness ${BRIGHTNESS}
+}
+
+alias flux="xflux -l 43.7 79.4"
+
+# tscl runs tsc local build
+function run_tsc_local() {
+  node ~/workspace/TypeScript/built/local/tsc.js $1
+}
+alias tscl=run_tsc_local
 
 # may cause problems with Cygwin
 alias tmux="tmux -2"
