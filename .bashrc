@@ -26,7 +26,6 @@ function run_tsc_local() {
 }
 alias tscl=run_tsc_local
 
-# may cause problems with Cygwin
 alias tmux="tmux -2"
 
 ## Cygwin
@@ -70,6 +69,20 @@ function killns ()
     PID=$(lsns | sed 's/[a-z.]\+\s\+\([0-9]\+\).*/\1/')
     echo 'Killing PID: '${PID}
     taskkill /F /PID ${PID}
+}
+
+# find TypeScript files
+function findts ()
+{
+    find . -name '*.ts' -type f -not -path '*typings*' -printf "%p\n"
+}
+
+# tsc watch
+function tscwatch ()
+{
+    echo "Found TypeScript files: "
+    findts | tee ts-files.txt
+    tsc --watch -m commonjs -t es5 --emitDecoratorMetadata @ts-files.txt --rootDir ts --outDir js
 }
 
 # convenience methods
