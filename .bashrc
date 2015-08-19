@@ -51,7 +51,7 @@ function killns ()
 # find TypeScript files
 function findts ()
 {
-    find . -name '*.ts' -type f -not -path '*typings*' -printf "%p\n"
+    find . -name '*.ts' -type f -path '*/ts/*' -printf "%p\n"
 }
 
 # tsc watch
