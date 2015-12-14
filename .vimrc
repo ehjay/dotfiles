@@ -1,11 +1,11 @@
 " START FROM
 if has("win32unix")
   "only in Cygwin
-  cd /c/Users/ajohnston/java
+  cd /cygdrive/c/Users/ajohnston/Documents/dev
 elseif has("unix")
   cd ~/workspace
 else
-  cd C:\Users\ajohnston\java
+  cd C:\Users\ajohnston\Documents\dev
 endif
 
 " TMUX or other parent process
@@ -157,9 +157,13 @@ nmap L <C-W>>
 let g:solarized_italic=0
 
 " colorscheme
-syntax enable
-set background=dark
-colorscheme apprentice
+syntax off
+"set background=dark
+highlight Normal guibg=Black
+highlight Normal guifg=Grey
+set t_Co=0
+filetype off
+"colorscheme apprentice
 
 " highlight trailing whitespace (but not in insert mode)
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
