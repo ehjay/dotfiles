@@ -158,12 +158,16 @@ let g:solarized_italic=0
 
 " colorscheme
 syntax off
-"set background=dark
 highlight Normal guibg=Black
 highlight Normal guifg=Grey
+highlight LineNr guifg=Grey
+highlight NonText guifg=Grey
+
 set t_Co=0
 filetype off
 "colorscheme apprentice
+" syntax enable
+"set background=dark
 
 " highlight trailing whitespace (but not in insert mode)
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
