@@ -1,19 +1,20 @@
 :: variables
-set ROOT=C:\Users\ajohnston\Documents\dev
+set HOME=C:\Users\ajohnston
+set DEV=%HOME%\Documents\dev
 
-set DOT=%ROOT%\dotfiles
-set MISC=%ROOT%\misc
-set BIG=%ROOT%\bigdata
-set F_API=%ROOT%\foundation-api
-set F_WWW=%ROOT%\foundation-www
-set ST_API=%ROOT%\stratascape-api
-set ST_WWW=%ROOT%\stratascape-www
-set SA_API=%ROOT%\salesscape-api
-set SA_WWW=%ROOT%\salesscape-www
-set B_API=%ROOT%\bankchoice-api
-set B_WWW=%ROOT%\bankchoice-www
-set P_API=%ROOT%\ptekintegration-api
-set P_WWW=%ROOT%\ptekintegration-www
+set DOT=%DEV%\dotfiles
+set MISC=%DEV%\misc
+set BIG=%DEV%\bigdata
+set F_API=%DEV%\foundation-api
+set F_WWW=%DEV%\foundation-www
+set ST_API=%DEV%\stratascape-api
+set ST_WWW=%DEV%\stratascape-www
+set SA_API=%DEV%\salesscape-api
+set SA_WWW=%DEV%\salesscape-www
+set B_API=%DEV%\bankchoice-api
+set B_WWW=%DEV%\bankchoice-www
+set P_API=%DEV%\ptekintegration-api
+set P_WWW=%DEV%\ptekintegration-www
 
 set DESKTOP=%HOME%\Desktop
 set DIFF_DIR=%DESKTOP%\diff
