@@ -96,6 +96,12 @@ endfunction
 " toggle between spaces and tabs with F9
 nmap <F9> mz:execute TabToggle()<CR>'z
 
+" save with unix file endings
+nmap <C-F10> :set ff=unix<enter> :w<enter> :echo &ff<enter>
+
+" save with dos file endings
+nmap <C-F11> :set ff=dos<enter> :w<enter> :echo &ff<enter>
+
 "" windows
 " switch windows with ALT + arrow key
 nmap <silent> <A-Up> :wincmd k<CR>
