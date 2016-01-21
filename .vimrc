@@ -23,6 +23,9 @@ set list
 set listchars=tab:>-,trail:·
 highlight SpecialKey guifg=DarkGreen
 
+" yank buffer path to Windows clipboard
+nmap <silent> <F4> :let @* = expand("%:p") <enter>
+
 " no line wrapping
 set nowrap
 
@@ -56,6 +59,9 @@ nmap P "*p
 " insert lines
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" backspace
+set backspace=indent,eol,start
 
 " stay in visual mode after changing indent
 vmap > >gv
@@ -144,9 +150,6 @@ endif
 
 " remove whitespace and save
 map <S-Space> :%s/\s\+$//<enter> :w<enter>
-
-" backspace
-set backspace=indent,eol,start
 
 " add GO every 10 lines
 map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
