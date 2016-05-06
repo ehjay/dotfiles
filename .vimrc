@@ -1,6 +1,6 @@
 " starting dir
 if has("unix")
-  cd ~/workspace
+  cd ~/dev
 else
   cd C:\Users\ajohnston\Documents\dev
 endif
