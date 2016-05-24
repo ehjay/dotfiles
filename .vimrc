@@ -1,14 +1,11 @@
 " starting dir
-if has("unix")
-  cd ~/dev
-else
-  cd C:\Users\ajohnston\Documents\dev
-endif
+cd ~/dev
 
-" colors and display
+" no syntax
 syntax off
 filetype off
-set t_Co=0
+
+# black and grey
 highlight Normal guibg=Black
 highlight Normal guifg=Grey
 highlight LineNr guifg=Grey
@@ -23,13 +20,10 @@ set list
 set listchars=tab:>-,trail:·
 highlight SpecialKey guifg=DarkGreen
 
-" yank buffer path to Windows clipboard
-nmap <silent> <F4> :let @* = expand("%:p") <enter>
-
 " no line wrapping
 set nowrap
 
-" auto indentation
+" auto indent
 filetype indent on
 set autoindent
 set smartindent
@@ -108,7 +102,7 @@ nmap <C-F10> :set ff=unix<enter> :w<enter> :echo &ff<enter>
 " save with dos file endings
 nmap <C-F11> :set ff=dos<enter> :w<enter> :echo &ff<enter>
 
-"" windows
+" MANAGE WINDOWS
 " switch windows with ALT + arrow key
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -146,7 +140,7 @@ if v:version >= 700 && has('gui_running')
   nnoremap <C-S-PageDown> :execute 'tabmove ' . tabpagenr()<CR>
 endif
 
-"" some rarely used utilities
+" UTILS
 
 " remove whitespace and save
 map <S-Space> :%s/\s\+$//<enter> :w<enter>
@@ -154,13 +148,13 @@ map <S-Space> :%s/\s\+$//<enter> :w<enter>
 " add GO every 10 lines
 map <C-F12> :%s/\(.*\n\)\{10\}/\0GO\r/gc
 
-""" packages
+" PACKAGES
 
-"" pathogen
+" pathogen
 execute pathogen#infect()
 filetype plugin indent on
 
-"" ctrlp
+" ctrlp
 
 " number of results
 let g:ctrlp_max_height = 30
@@ -175,6 +169,9 @@ nmap <C-F7> :CtrlPClearCache<CR>
 " search from current directory instead of project root
 let g:ctrlp_working_path_mode = 0
 
-" ignore
+" NERDTree
+autocmd VimEnter * NERDTree
+
+" IGNORE
 set wildignore+=*\\tmp\\**,*.swp,*.zip,*.exe
 set wildignore+=*\\images\\**,*\\node_modules\\**,*\\bower_components\\**
