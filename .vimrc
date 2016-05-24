@@ -5,11 +5,16 @@ cd ~/dev
 syntax off
 filetype off
 
-# black and grey
+" black and grey
 highlight Normal guibg=Black
-highlight Normal guifg=Grey
-highlight LineNr guifg=Grey
-highlight NonText guifg=Grey
+highlight Normal guifg=LightGrey
+highlight LineNr guifg=LightGrey
+highlight NonText guifg=LightGrey
+
+" font
+if v:version >= 700 && has('gui_running')
+  set guifont=Courier\ 10\ Pitch\ 12
+endif
 
 " column marker
 set colorcolumn=81
