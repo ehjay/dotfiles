@@ -175,7 +175,9 @@ nmap <C-F7> :CtrlPClearCache<CR>
 let g:ctrlp_working_path_mode = 0
 
 " NERDTree
-autocmd VimEnter * NERDTree
+if has('gui_running')
+  autocmd VimEnter * NERDTree
+endif
 
 " IGNORE
 set wildignore+=*\\tmp\\**,*.swp,*.zip,*.exe
