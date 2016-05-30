@@ -1,5 +1,10 @@
 source /etc/skel/.bashrc
 
+# find screen names with xrandr -q
+SECOND_MONITOR="DP1"
+alias dim="xrandr --output $SECOND_MONITOR --brightness 0.8"
+alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
+
 JAVA_7_HOME='/usr/local/java/jdk1.7.0_79'
 JAVA_8_HOME='/usr/local/java/jdk1.8.0_91'
 
