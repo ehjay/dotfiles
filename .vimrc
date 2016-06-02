@@ -142,7 +142,7 @@ if v:version >= 700 && has('gui_running')
   " move tab left
   nnoremap <C-S-PageUp> :execute 'tabmove ' . (tabpagenr()-2)<CR>
   " move tab right
-  nnoremap <C-S-PageDown> :execute 'tabmove ' . tabpagenr()<CR>
+  nnoremap <C-S-PageDown> :execute 'tabmove ' . (tabpagenr()+1)<CR>
 endif
 
 " UTILS
