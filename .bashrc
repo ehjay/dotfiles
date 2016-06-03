@@ -19,6 +19,15 @@ alias followTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='java_7 && stopTomcat && removePlatform && copyPlatform && startTomcat'
 
+alias gotoWebapi='cd ~/dev/webapi'
+alias deployWebapi='java_7 && gotoWebapi && pwd && play debug run'
+
+alias gotoMatchhub='cd ~/dev/matchhub'
+alias deployMatchhub='java_8 && gotoMatchhub && pwd && make build && sudo make run'
+
+alias gotoWebapp='cd ~/dev/webapp'
+alias deployWebapp='gotoWebapp && pwd && make build && make serve'
+
 alias startRabbit='sudo rabbitmq-server -detached'
 alias stopRabbit='sudo rabbitmqctl stop'
 
