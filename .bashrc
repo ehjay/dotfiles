@@ -25,6 +25,9 @@ alias deployPlatform='java_7 && gotoPlatform && cleanPlatform && buildPlatform &
 alias gotoWebapi='cd ~/dev/webapi'
 alias deployWebapi='java_7 && gotoWebapi && pwd && play debug run'
 
+alias gotoGateway='cd ~/dev/api-gateway'
+alias deployGateway='gotoGateway && make serve'
+
 alias gotoMatchhub='cd ~/dev/matchhub'
 alias deployMatchhub='java_8 && gotoMatchhub && pwd && make build && sudo make run'
 
