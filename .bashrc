@@ -12,7 +12,7 @@ alias java_7="echo 'switching to java 7 ...' && export JAVA_HOME=$JAVA_7_HOME &&
 alias java_8="echo 'switching to java 8 ...' && export JAVA_HOME=$JAVA_8_HOME && sudo ln -s -f $JAVA_8_HOME/bin/java /usr/bin/java && java -version"
 
 alias gotoPlatform='cd ~/dev/platform'
-alias cleanPlatform='echo "cleaning platform ..." && rm ~/dev/platform/target/platform.war'
+alias cleanPlatform='echo "cleaning platform ..." && sudo rm -rf ~/dev/platform/target/platform*'
 alias buildPlatform='echo "building platform ..." && mvn install -Dmaven.test.skip=true'
 alias stopTomcat='echo "stopping Tomcat ..." && sudo /opt/tomcat7/bin/shutdown.sh'
 alias removePlatform='echo "removing platform ..." && sudo rm -rf /opt/tomcat7/webapps/platform*'
