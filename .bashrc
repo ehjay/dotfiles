@@ -31,11 +31,19 @@ alias deployGateway='gotoGateway && make serve'
 alias gotoMatchhub='cd ~/dev/matchhub'
 alias deployMatchhub='java_8 && gotoMatchhub && pwd && make build && sudo make run'
 
+alias gotoCms='cd ~/dev/cms'
+alias deployCms='gotoCms && make serve'
+
 alias gotoWebapp='cd ~/dev/webapp'
 alias deployWebapp='gotoWebapp && pwd && make build && make serve'
 
 alias startRabbit='sudo rabbitmq-server -detached'
 alias stopRabbit='sudo rabbitmqctl stop'
+
+alias startEjabberd="sudo ejabberdctl start"
+alias stopEjabberd="sudo ejabberdctl stop"
+alias restartEjabberd="stopEjabberd && startEjabberd"
+alias tailEjabberd="sudo tail -f /opt/ejabberd-16.03/logs/ejabberd.log"
 
 SU_POSTGRES='sudo su postgres -c'
 alias pDB="$SU_POSTGRES \"psql platform postgres\""
