@@ -179,6 +179,8 @@ if has('gui_running')
   autocmd VimEnter * NERDTree
 endif
 
+let NERDTreeShowHidden=1
+
 " IGNORE
 set wildignore+=*\\tmp\\**,*.swp,*.zip,*.exe
 set wildignore+=*\\images\\**,*\\node_modules\\**,*\\bower_components\\**
