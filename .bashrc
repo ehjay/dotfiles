@@ -33,6 +33,7 @@ alias deployMatchhub='java_8 && gotoMatchhub && pwd && make build && sudo make r
 
 alias gotoCms='cd ~/dev/cms'
 alias deployCms='gotoCms && make serve'
+alias shrinkCms='gotoCms && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
 
 alias gotoWebapp='cd ~/dev/webapp'
 alias deployWebapp='gotoWebapp && pwd && make build && make serve'
