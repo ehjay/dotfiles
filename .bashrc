@@ -50,6 +50,8 @@ SU_POSTGRES='sudo su postgres -c'
 alias pDB="$SU_POSTGRES \"psql platform postgres\""
 alias mDB="$SU_POSTGRES \"psql matchhub postgres\""
 
+alias ignoreSwp="echo \"*.swp\" >> .gitignore"
+
 PATH=$PATH:/home/andrewj/src/play-2.1.5
 PATH=$PATH:/usr/local/node/bin
 export PATH
