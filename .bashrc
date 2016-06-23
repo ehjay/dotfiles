@@ -7,8 +7,8 @@ alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 
 # git
 
+alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
-alias ignoreSwp='echo \"*.swp\" >> .gitignore'
 
 # java
 
