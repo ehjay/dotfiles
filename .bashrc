@@ -41,17 +41,17 @@ alias gotoWebapi='cd ~/dev/webapi && pwd && thisBranch'
 alias deployWebapi='java_7 && gotoWebapi && play debug run'
 
 alias gotoGateway='cd ~/dev/api-gateway && pwd && thisBranch'
-alias deployGateway='gotoGateway && rmNodeMod && make install && make serve'
+alias deployGateway='gotoGateway && rmNodeMod && make install serve'
 
 alias gotoMatchhub='cd ~/dev/matchhub && pwd && thisBranch'
 alias deployMatchhub='java_8 && gotoMatchhub && rmNodeMod && make install && make build && sudo make run'
 
 alias gotoCms='cd ~/dev/cms && pwd && thisBranch'
-alias deployCms='gotoCms && rmNodeMod && make install && make serve'
+alias deployCms='gotoCms && rmNodeMod && make install serve'
 alias shrinkCms='gotoCms && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
 
 alias gotoWebapp='cd ~/dev/webapp && pwd && thisBranch'
-alias deployWebapp='gotoWebapp && rmNodeMod && make install && make build && make serve'
+alias deployWebapp='gotoWebapp && rmNodeMod && make install build serve'
 
 alias startRabbit='sudo rabbitmq-server -detached'
 alias stopRabbit='sudo rabbitmqctl stop'
