@@ -63,6 +63,7 @@ alias tailEjabberd="sudo tail -f /opt/ejabberd-16.03/logs/ejabberd.log"
 
 # postgres
 
+alias restartPostgres='sudo /etc/init.d/postgresql restart'
 SU_POSTGRES='sudo su postgres -c'
 alias pDB="$SU_POSTGRES \"psql platform postgres\""
 alias mDB="$SU_POSTGRES \"psql matchhub postgres\""
