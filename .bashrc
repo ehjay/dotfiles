@@ -50,6 +50,10 @@ alias gotoCms='cd ~/dev/cms && pwd && thisBranch'
 alias deployCms='gotoCms && rmNodeMod && make install serve'
 alias shrinkCms='gotoCms && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
 
+alias gotoAgwRex='cd ~/dev/gateway-rex && pwd && thisBranch'
+alias deployAgwRex='gotoAgwRex && rmNodeMod && make install serve'
+alias shrinkAgwRex='gotoAgwRex && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
+
 alias gotoWebapp='cd ~/dev/webapp && pwd && thisBranch'
 alias deployWebapp='gotoWebapp && rmNodeMod && make install build serve'
 
