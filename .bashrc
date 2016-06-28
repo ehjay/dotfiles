@@ -11,8 +11,11 @@ alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git confi
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
 alias gitb='git branch'
 alias gitm='git checkout master'
+alias gitoc='git checkout open-challenge'
 alias gitp='git pull'
 alias gitpcache='git config --global credential.helper "cache --timeout=3600"'
+alias gitresmast='git reset --hard origin/master'
+alias gitresoc='git reset --hard origin/open-challenge'
 
 # java
 
