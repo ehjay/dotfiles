@@ -9,6 +9,10 @@ alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 
 alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
+alias gitb='git branch'
+alias gitm='git checkout master'
+alias gitp='git pull'
+alias gitpcache='git config --global credential.helper "cache --timeout=3600"'
 
 # java
 
@@ -36,26 +40,33 @@ alias startTomcat='echo "starting Tomcat ..." && sudo /opt/tomcat7/bin/startup.s
 alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && stopTomcat && removePlatform && copyPlatform && startTomcat'
+alias depplat='deployPlatform'
 
 alias gotoWebapi='cd ~/dev/webapi && pwd && thisBranch'
 alias deployWebapi='java_7 && gotoWebapi && play debug run'
+alias depwapi='deployWebapi'
 
 alias gotoGateway='cd ~/dev/api-gateway && pwd && thisBranch'
 alias deployGateway='gotoGateway && rmNodeMod && make install serve'
+alias depgat='deployGateway'
 
 alias gotoMatchhub='cd ~/dev/matchhub && pwd && thisBranch'
 alias deployMatchhub='java_8 && gotoMatchhub && rmNodeMod && make install && make build && sudo make run'
+alias depmat='deployMatchhub'
 
 alias gotoCms='cd ~/dev/cms && pwd && thisBranch'
 alias deployCms='gotoCms && rmNodeMod && make install serve'
 alias shrinkCms='gotoCms && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
+alias depcms='deployCms'
 
 alias gotoAgwRex='cd ~/dev/gateway-rex && pwd && thisBranch'
 alias deployAgwRex='gotoAgwRex && rmNodeMod && make install serve'
 alias shrinkAgwRex='gotoAgwRex && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
+alias depgrex='deployAgwRex'
 
 alias gotoWebapp='cd ~/dev/webapp && pwd && thisBranch'
 alias deployWebapp='gotoWebapp && rmNodeMod && make install build serve'
+alias depwapp='deployWebapp'
 
 alias startRabbit='sudo rabbitmq-server -detached'
 alias stopRabbit='sudo rabbitmqctl stop'
@@ -69,8 +80,9 @@ alias tailEjabberd="sudo tail -f /opt/ejabberd-16.03/logs/ejabberd.log"
 
 alias restartPostgres='sudo /etc/init.d/postgresql restart'
 SU_POSTGRES='sudo su postgres -c'
-alias pDB="$SU_POSTGRES \"psql platform postgres\""
-alias mDB="$SU_POSTGRES \"psql matchhub postgres\""
+alias platDB="$SU_POSTGRES \"psql platform postgres\""
+alias matDB="$SU_POSTGRES \"psql matchhub postgres\""
+alias cmsDB='psql -U cms -d cms -h localhost -W'
 
 # path
 
