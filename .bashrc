@@ -10,12 +10,16 @@ alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
 alias gitb='git branch'
+alias gitd='git diff'
+alias gitds='git diff --staged'
 alias gitm='git checkout master'
 alias gitoc='git checkout open-challenge'
 alias gitp='git pull'
 alias gitpcache='git config --global credential.helper "cache --timeout=3600"'
+alias gitrem='git remote -v'
 alias gitresmast='git reset --hard origin/master'
 alias gitresoc='git reset --hard origin/open-challenge'
+alias gits='git status'
 
 # java
 
