@@ -23,6 +23,10 @@ alias gitresmast='git reset --hard origin/master'
 alias gitresoc='git reset --hard origin/open-challenge'
 alias gits='git status'
 
+# make
+alias mkbs='make build serve'
+alias mki='make install'
+
 # java
 
 JAVA_7_HOME='/usr/local/java/jdk1.7.0_79'
