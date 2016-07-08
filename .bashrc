@@ -2,7 +2,18 @@ source /etc/skel/.bashrc
 
 # find screen names with xrandr -q
 SECOND_MONITOR="DP1"
-alias dim="xrandr --output $SECOND_MONITOR --brightness 0.8"
+
+function dimPercent() {
+  if [ $1 -ge 50 -a $1 -le 100 ]
+  then
+    xrandr --output $SECOND_MONITOR --brightness $(bc -l <<< "$1/100")
+  else
+    echo "invalid brightness: $1"
+    echo "brightness must be between 50 and 100"
+  fi
+}
+
+alias dim=dimPercent
 alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 
 # git
