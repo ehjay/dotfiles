@@ -109,8 +109,13 @@ alias platDB="$SU_POSTGRES \"psql platform postgres\""
 alias matDB="$SU_POSTGRES \"psql matchhub postgres\""
 alias cmsDB='psql -U cms -d cms -h localhost -W'
 
+# exports
+
+export GOPATH=~/gocode
+
 # path
 
 PATH=$PATH:/home/andrewj/src/play-2.1.5
 PATH=$PATH:/usr/local/node/bin
+PATH=$PATH:"$GOPATH/bin"
 export PATH
