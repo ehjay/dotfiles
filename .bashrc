@@ -65,7 +65,9 @@ alias startTomcat='echo "starting Tomcat ..." && sudo /opt/tomcat7/bin/startup.s
 alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && stopTomcat && removePlatform && copyPlatform && startTomcat'
+alias deployPlatformNoDep='buildPlatform && stopTomcat && removePlatform && copyPlatform && startTomcat'
 alias depplat='deployPlatform'
+alias depplatnodep='deployPlatformNoDep'
 
 alias gotoWebapi='cd ~/dev/webapi && pwd && thisBranch'
 alias deployWebapi='java_7 && gotoWebapi && play debug run'
