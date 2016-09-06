@@ -52,6 +52,10 @@ alias checkMvnConfig='[ -f ~/.m2/settings.xml ] && echo "found ~/.m2/settings.xm
 alias rmM2Repo='echo "removing ~/.m2/repository ..." && rm -rf ~/.m2/repository'
 alias rmNodeMod='echo "removing node_modules ..." && rm -rf node_modules'
 
+# proxy
+
+alias charles='java_8 && ~/src/charles/bin/charles'
+
 # apps
 
 alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
