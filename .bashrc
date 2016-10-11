@@ -39,6 +39,9 @@ alias gits='git status'
 alias mkbs='make build serve'
 alias mki='make install'
 
+# chrome
+alias chro='FOLDER=~/chrome-profiles/$(date +%s | sha256sum | base64 | head -c 4) && google-chrome --user-data-dir="$FOLDER" && echo $FOLDER'
+
 # java
 
 JAVA_7_HOME='/usr/local/java/jdk1.7.0_79'
