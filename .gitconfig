@@ -1,0 +1,13 @@
+[credential]
+    # 12 hour cache
+    helper = cache --timeout=43200
+
+[include]
+    # put user.email and user.name in local file
+    path = ~/.gitconfig-local
+
+[merge]
+    conflictstyle = diff3
+
+[pull]
+    rebase = preserve
