@@ -20,15 +20,17 @@ alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 
 alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
+
 alias gitb='git branch'
 alias gitd='git diff'
 alias gitds='git diff --staged'
 alias gitc='git checkout'
+alias gitcache='git config --global credential.helper "cache --timeout=3600"'
 alias gitcm='git checkout master'
 alias gitcoc='git checkout open-challenge'
 alias gitf='git fetch'
+alias gitl='git fetch && git branch --list -a'
 alias gitp='git pull'
-alias gitccache='git config --global credential.helper "cache --timeout=3600"'
 alias gitpo='git push origin'
 alias gitrem='git remote -v'
 alias gitresmast='git reset --hard origin/master'
