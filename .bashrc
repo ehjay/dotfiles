@@ -65,6 +65,11 @@ alias charles='java_8 && ~/src/charles/bin/charles'
 # export JAVA_OPTS="-Dfile.encoding=UTF-8 -Xms1536m -Xmx1536m -XX:PermSize=256m -XX:MaxPermSize=256m"
 # export JPDA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
 
+# jpda allows remote debug with tomcat
+# play debug run allows remote by default on port 9999
+# can connect to both remotes with intellij
+# Run > Edit Configurations... > + > Remote > Port: 5005 or 9999
+
 # apps
 
 alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
