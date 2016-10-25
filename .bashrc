@@ -61,17 +61,22 @@ alias rmNodeMod='echo "removing node_modules ..." && rm -rf node_modules'
 
 alias charles='java_8 && ~/src/charles/bin/charles'
 
+# tomcat/bin/setenv.sh
+# export JAVA_OPTS="-Dfile.encoding=UTF-8 -Xms1536m -Xmx1536m -XX:PermSize=256m -XX:MaxPermSize=256m"
+# export JPDA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+
 # apps
 
 alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
 alias migratePlatform='echo "running flyway ..." && mvn clean compile flyway:migrate'
 alias cleanPlatform='echo "cleaning platform ..." && sudo rm -rf ~/dev/platform/target/platform*'
 alias buildPlatform='echo "building platform ..." && mvn clean install -Dmaven.test.skip=true'
-alias stopTomcat='echo "stopping Tomcat ..." && sudo /opt/tomcat7/bin/shutdown.sh'
 alias removePlatform='echo "removing platform from Tomcat ..." && sudo rm -rf /opt/tomcat7/webapps/platform*'
 alias copyPlatform='echo "copying platform ..." && sudo cp ~/dev/platform/target/platform.war /opt/tomcat7/webapps/'
-alias startTomcat='echo "starting Tomcat ..." && sudo /opt/tomcat7/bin/startup.sh'
+alias startTomcat="echo 'starting Tomcat ...' && sudo /opt/tomcat7/bin/catalina.sh jpda start"
+alias stopTomcat="echo 'stopping Tomcat ...' && sudo /opt/tomcat7/bin/catalina.sh jpda stop"
 alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
+alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias deployPlatformNoDep='stopTomcat && buildPlatform && removePlatform && copyPlatform && startTomcat'
