@@ -16,6 +16,24 @@ function dimPercent() {
 alias dim=dimPercent
 alias undim="xrandr --output $SECOND_MONITOR --brightness 1"
 
+# search and replace
+
+function replaceRecursively() {
+  if [ -z "$1" ]
+  then
+    echo "First param cannot be empty"
+    exit 1
+  fi
+
+  echo "Recursively replacing '$1' with '$2' ..."
+  # too slow:
+  # find ./ -type f -exec sed -i -e "s/$1/$2/g" {} \;
+
+  grep -rl --exclude-dir={node_modules,jspm_packages,coverage,public} "$1" . | xargs sed -i "s/$1/$2/g"
+}
+
+alias reprec=replaceRecursively
+
 # git
 
 alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
