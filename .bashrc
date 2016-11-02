@@ -115,7 +115,7 @@ alias deployGateway='gotoGateway && rmNodeMod && make install serve'
 alias depgat='deployGateway'
 
 alias gotoMatchhub='cd ~/dev/matchhub && pwd && thisBranch'
-alias deployMatchhub='java_8 && gotoMatchhub && rmNodeMod && make install && make build && sudo make run'
+alias deployMatchhub='java_8 && gotoMatchhub && make build && sudo make run'
 alias depmat='deployMatchhub'
 
 alias gotoCms='cd ~/dev/cms && pwd && thisBranch'
