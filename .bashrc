@@ -101,8 +101,9 @@ alias stopTomcat="echo 'stopping Tomcat ...' && sudo /opt/tomcat7/bin/catalina.s
 alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
-alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
-alias deployPlatformNoDep='stopTomcat && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatformNoDB='stopTomcat && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatformFromScratch='stopTomcat && gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias depplat='deployPlatform'
 alias depplatnodep='deployPlatformNoDep'
 
