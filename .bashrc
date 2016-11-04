@@ -75,6 +75,20 @@ alias checkMvnConfig='[ -f ~/.m2/settings.xml ] && echo "found ~/.m2/settings.xm
 alias rmM2Repo='echo "removing ~/.m2/repository ..." && rm -rf ~/.m2/repository'
 alias rmNodeMod='echo "removing node_modules ..." && rm -rf node_modules'
 
+# mvn
+
+# this is a workaround for copying someone else's .m2 folder
+# first, cp -R the .m2/repository folder into ~/.m2
+# then remove other users metadata
+
+alias removeMvnMetadata='find ~/.m2/repository \( -name _remote.repositories -o -name _maven.repositories -o -name "*maven-meta*" -o -name resolver-status.properties \) -exec rm -v {} \;'
+
+# for xSocket [2.4, 2.5) error just manually edit
+# .m2/repository/org/xlightweb/xlightweb/2.5/xlightweb-2.5.pom
+# to have <xsocket.version>2.4.6</xsocket.version>
+
+# then build targets using mvn -o (offline)
+
 # proxy
 
 alias charles='java_8 && ~/src/charles/bin/charles'
@@ -94,15 +108,19 @@ alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
 alias migratePlatform='echo "running flyway ..." && mvn clean compile flyway:migrate'
 alias cleanPlatform='echo "cleaning platform ..." && sudo rm -rf ~/dev/platform/target/platform*'
 alias buildPlatform='echo "building platform ..." && mvn clean install -Dmaven.test.skip=true'
+alias buildPlatformOffline='echo "building platform offline ..." && mvn -o clean install -Dmaven.test.skip=true'
 alias removePlatform='echo "removing platform from Tomcat ..." && sudo rm -rf /opt/tomcat7/webapps/platform*'
 alias copyPlatform='echo "copying platform ..." && sudo cp ~/dev/platform/target/platform.war /opt/tomcat7/webapps/'
 alias startTomcat="echo 'starting Tomcat ...' && sudo /opt/tomcat7/bin/catalina.sh jpda start"
 alias stopTomcat="echo 'stopping Tomcat ...' && sudo /opt/tomcat7/bin/catalina.sh jpda stop"
+alias startTomcatNoJpda="echo 'starting Tomcat ...' && sudo /opt/tomcat7/bin/startup.sh"
+alias stopTomcatNoJpda="echo 'stopping Tomcat ...' && sudo /opt/tomcat7/bin/shutdown.sh"
 alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias deployPlatformNoDB='stopTomcat && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatformOffline='stopTomcatNoJpda && buildPlatformOffline && removePlatform && copyPlatform && startTomcatNoJpda'
 alias deployPlatformFromScratch='stopTomcat && gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias depplat='deployPlatform'
 alias depplatnodep='deployPlatformNoDep'
