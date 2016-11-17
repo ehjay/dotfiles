@@ -13,8 +13,5 @@
 [merge]
     conflictstyle = diff3
 
-[pull]
-    rebase = preserve
-
 [push]
     default = simple
