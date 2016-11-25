@@ -155,8 +155,8 @@ alias depwapp='deployWebapp'
 alias startRabbit='sudo rabbitmq-server -detached'
 alias stopRabbit='sudo rabbitmqctl stop'
 
-alias startEjabberd="sudo ejabberdctl start"
-alias stopEjabberd="sudo ejabberdctl stop"
+alias startEjabberd="sudo /opt/ejabberd-16.03/bin/ejabberdctl start"
+alias stopEjabberd="sudo /opt/ejabberd-16.03/bin/ejabberdctl stop"
 alias restartEjabberd="stopEjabberd && startEjabberd"
 alias tailEjabberd="sudo tail -f /opt/ejabberd-16.03/logs/ejabberd.log"
 
