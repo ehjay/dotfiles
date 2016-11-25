@@ -80,27 +80,12 @@ alias rmNodeMod='echo "removing node_modules ..." && rm -rf node_modules'
 # this is a workaround for copying someone else's .m2 folder
 # first, cp -R the .m2/repository folder into ~/.m2
 # then remove other users metadata
-
-alias removeMvnMetadata='find ~/.m2/repository \( -name _remote.repositories -o -name _maven.repositories -o -name "*maven-meta*" -o -name resolver-status.properties \) -exec rm -v {} \;'
-
 # for xSocket [2.4, 2.5) error just manually edit
 # .m2/repository/org/xlightweb/xlightweb/2.5/xlightweb-2.5.pom
 # to have <xsocket.version>2.4.6</xsocket.version>
-
 # then build targets using mvn -o (offline)
 
-# proxy
-
-alias charles='java_8 && ~/src/charles/bin/charles'
-
-# tomcat/bin/setenv.sh
-# export JAVA_OPTS="-Dfile.encoding=UTF-8 -Xms1536m -Xmx1536m -XX:PermSize=256m -XX:MaxPermSize=256m"
-# export JPDA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
-
-# jpda allows remote debug with tomcat
-# play debug run allows remote by default on port 9999
-# can connect to both remotes with intellij
-# Run > Edit Configurations... > + > Remote > Port: 5005 or 9999
+alias removeMvnMetadata='find ~/.m2/repository \( -name _remote.repositories -o -name _maven.repositories -o -name "*maven-meta*" -o -name resolver-status.properties \) -exec rm -v {} \;'
 
 # apps
 
