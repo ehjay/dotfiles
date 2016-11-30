@@ -36,6 +36,11 @@ alias reprec=replaceRecursively
 
 # git
 
+function gitNew() {
+  git fetch
+  git log --oneline origin/$1..
+}
+
 alias initGit='[ -f ~/.gitignore ] || echo ".*.sw?" >> ~/.gitignore && git config --global core.excludesfile ~/.gitignore'
 alias thisBranch='echo "git branch: $(git rev-parse --abbrev-ref HEAD)"'
 
@@ -48,8 +53,8 @@ alias gitcm='git checkout master'
 alias gitcoc='git checkout open-challenge'
 alias gitf='git fetch'
 alias gitl='git fetch && git branch --list -a'
-# i.e. gitnew - which commits are new vs master
-alias gitn='git log --oneline origin/master..'
+# usage: "gitn basebranch" - what's new in current branch vs the basebranch
+alias gitn=gitNew
 alias gitp='git pull'
 alias gitpo='git push origin'
 alias gitrem='git remote -v'
