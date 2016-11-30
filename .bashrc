@@ -48,6 +48,8 @@ alias gitcm='git checkout master'
 alias gitcoc='git checkout open-challenge'
 alias gitf='git fetch'
 alias gitl='git fetch && git branch --list -a'
+# i.e. gitnew - which commits are new vs master
+alias gitn='git log --oneline origin/master..'
 alias gitp='git pull'
 alias gitpo='git push origin'
 alias gitrem='git remote -v'
