@@ -112,6 +112,7 @@ alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatform8='stopTomcat && gotoPlatform && checkMvnConfig && java_8 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias deployPlatformNoDB='stopTomcat && buildPlatform && removePlatform && copyPlatform && startTomcat'
 alias deployPlatformOffline='stopTomcatNoJpda && buildPlatformOffline && removePlatform && copyPlatform && startTomcatNoJpda'
 alias deployPlatformFromScratch='stopTomcat && gotoPlatform && checkMvnConfig && rmM2Repo && java_7 && migratePlatform && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
