@@ -119,6 +119,7 @@ alias deployPlatformFromScratch='stopTomcat && gotoPlatform && checkMvnConfig &&
 alias depplat='deployPlatform'
 alias depplatnodep='deployPlatformNoDep'
 
+alias cleanWebapi='rm -rf ~/src/play-2.1.5/repository/cache'
 alias gotoWebapi='cd ~/dev/webapi && pwd && thisBranch'
 alias deployWebapi='java_7 && gotoWebapi && play debug run'
 alias depwapi='deployWebapi'
