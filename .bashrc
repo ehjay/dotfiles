@@ -175,7 +175,9 @@ export GOPATH=~/gocode
 
 # path
 
+#PATH=$PATH:/home/andrewj/src/play-2.1.0
 PATH=$PATH:/home/andrewj/src/play-2.1.5
+PATH=$PATH:/usr/local/flyway-4.0.3
 PATH=$PATH:/usr/local/node/bin
 PATH=$PATH:"$GOPATH/bin"
 export PATH
