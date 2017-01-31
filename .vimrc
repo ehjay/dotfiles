@@ -121,10 +121,10 @@ nmap <silent> <C-Left> :wincmd H<CR>
 nmap <silent> <C-Right> :wincmd L<CR>
 
 " quickly resize windows
-nmap J <C-W>-
-nmap K <C-W>+
-nmap H <C-W><
-nmap L <C-W>>
+" nmap J <C-W>-
+" nmap K <C-W>+
+" nmap H <C-W><
+" nmap L <C-W>>
 
 " cycle through open windows
 map <F6> <C-W>w
