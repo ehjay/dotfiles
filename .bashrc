@@ -158,13 +158,15 @@ alias tailEjabberd="sudo tail -f /opt/ejabberd-16.03/logs/ejabberd.log"
 
 # postgres
 
-alias restartPostgres='sudo /etc/init.d/postgresql restart'
-
 # show SQL statements in logs by editing
 #   /etc/postgresql/9.5/main/postgresql.conf
 # to have:
 #   log_statement = 'all'
+
 alias tailPostgres='sudo tail -f /var/log/postgresql/postgresql-9.5-main.log'
+alias restartpg='sudo /etc/init.d/postgresql restart'
+alias startpg='sudo /etc/init.d/postgresql start'
+alias stoppg='sudo /etc/init.d/postgresql stop'
 
 SU_POSTGRES='sudo su postgres -c'
 alias platDB="$SU_POSTGRES \"psql platform postgres\""
@@ -181,6 +183,5 @@ export GOPATH=~/gocode
 PATH=$PATH:/home/andrewj/src/play-2.1.5
 PATH=$PATH:/usr/local/flyway-4.0.3
 PATH=$PATH:/usr/local/node/bin
-PATH=$PATH:/usr/lib/postgresql/9.5/bin
 PATH=$PATH:"$GOPATH/bin"
 export PATH
