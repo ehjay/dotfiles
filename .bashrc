@@ -181,5 +181,6 @@ export GOPATH=~/gocode
 PATH=$PATH:/home/andrewj/src/play-2.1.5
 PATH=$PATH:/usr/local/flyway-4.0.3
 PATH=$PATH:/usr/local/node/bin
+PATH=$PATH:/usr/lib/postgresql/9.5/bin
 PATH=$PATH:"$GOPATH/bin"
 export PATH
