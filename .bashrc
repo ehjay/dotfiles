@@ -94,6 +94,10 @@ alias rmNodeMod='echo "removing node_modules ..." && rm -rf node_modules'
 
 alias removeMvnMetadata='find ~/.m2/repository \( -name _remote.repositories -o -name _maven.repositories -o -name "*maven-meta*" -o -name resolver-status.properties \) -exec rm -v {} \;'
 
+# node
+
+alias depsize='du -Ssh node_modules/* | sort -rh'
+
 # apps
 
 alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
