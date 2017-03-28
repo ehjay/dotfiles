@@ -96,7 +96,7 @@ alias removeMvnMetadata='find ~/.m2/repository \( -name _remote.repositories -o 
 
 # node
 
-alias depsize='du -Ssh node_modules/* | sort -rh'
+alias depsize='cost-of-modules --less --no-install'
 
 # apps
 
