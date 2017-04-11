@@ -131,6 +131,9 @@ alias gotoMatchhub='cd ~/dev/matchhub && pwd && thisBranch'
 alias deployMatchhub='java_8 && gotoMatchhub && make build && sudo make run'
 alias depmat='deployMatchhub'
 
+alias gotoHub='cd ~/dev/hub-api'
+alias deployHub='java_8 && gotoHub && make build && sudo make run'
+
 alias gotoCms='cd ~/dev/cms && pwd && thisBranch'
 alias deployCms='gotoCms && rmNodeMod && make install serve'
 alias shrinkCms='gotoCms && rm npm-shrinkwrap.json && make distclean install && npm shrinkwrap'
