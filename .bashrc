@@ -117,6 +117,7 @@ alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
 alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && java_8 && make migrate && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
+alias deployPlatformSkipFlyway='stopTomcat && gotoPlatform && checkMvnConfig && java_8 && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
 
 alias cleanWebapi='rm -rf ~/src/play-2.1.5/repository/cache'
 alias gotoWebapi='cd ~/dev/webapi && pwd && thisBranch'
