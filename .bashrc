@@ -113,7 +113,7 @@ alias startTomcat="echo 'starting Tomcat ...' && sudo /opt/tomcat7/bin/catalina.
 alias stopTomcat='echo "stopping Tomcat ..." && sudo kill -9 $(ps aux | grep "[t]omcat" | awk '\''{print $2}'\'')'
 alias startTomcatNoJpda="echo 'starting Tomcat ...' && sudo /opt/tomcat7/bin/startup.sh"
 alias stopTomcatNoJpda="echo 'stopping Tomcat ...' && sudo /opt/tomcat7/bin/shutdown.sh"
-alias tailTomcat='sudo tail -f /opt/tomcat7/logs/catalina.out'
+alias tailTomcat='sudo tail -200f /opt/tomcat7/logs/catalina.out'
 alias readTomcat='sudo less /opt/tomcat7/logs/catalina.out'
 
 alias deployPlatform='stopTomcat && gotoPlatform && checkMvnConfig && java_8 && make migrate && cleanPlatform && buildPlatform && removePlatform && copyPlatform && startTomcat'
