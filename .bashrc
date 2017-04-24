@@ -73,6 +73,7 @@ alias chro='FOLDER=~/chrome-profiles/$(date +%s | sha256sum | base64 | head -c 4
 
 JAVA_7_HOME='/usr/local/java/jdk1.7.0_79'
 JAVA_8_HOME='/usr/local/java/jdk1.8.0_91'
+export JAVA_HOME=$JAVA_8_HOME
 
 alias java_7="echo 'switching to java 7 ...' && export JAVA_HOME=$JAVA_7_HOME && sudo ln -s -f $JAVA_7_HOME/bin/java /usr/bin/java && java -version"
 alias java_8="echo 'switching to java 8 ...' && export JAVA_HOME=$JAVA_8_HOME && sudo ln -s -f $JAVA_8_HOME/bin/java /usr/bin/java && java -version"
@@ -176,7 +177,7 @@ alias cmsDB='psql -U cms -d cms -h localhost -W'
 
 # exports
 
-export GOPATH=~/gocode
+export GOPATH=~/dev/go
 
 # path
 
@@ -184,5 +185,6 @@ export GOPATH=~/gocode
 PATH=$PATH:/home/andrewj/src/play-2.1.5
 PATH=$PATH:/usr/local/flyway-4.0.3
 PATH=$PATH:/usr/local/node/bin
+PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:"$GOPATH/bin"
 export PATH
