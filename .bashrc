@@ -175,6 +175,13 @@ alias platDB="$SU_POSTGRES \"psql platform postgres\""
 alias matDB="$SU_POSTGRES \"psql matchhub postgres\""
 alias cmsDB='psql -U cms -d cms -h localhost -W'
 
+# mongo
+
+alias startMongo='sudo service mongod start'
+alias stopMongo='sudo service mongod stop'
+alias restartMongo='sudo service mongod restart'
+alias tailMongo='tail -200f /var/log/mongodb/mongod.log'
+
 # exports
 
 export GOPATH=~/dev/go
