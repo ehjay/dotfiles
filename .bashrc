@@ -103,7 +103,6 @@ alias topdepsize='cost-of-modules --less --no-install'
 # apps
 
 alias gotoPlatform='cd ~/dev/platform && pwd && thisBranch'
-alias migratePlatform='echo "running flyway ..." && mvn clean compile flyway:migrate'
 alias cleanPlatform='echo "cleaning platform ..." && sudo rm -rf ~/dev/platform/target/platform*'
 alias buildPlatform='echo "building platform ..." && mvn clean install -Dmaven.test.skip=true'
 alias buildPlatformOffline='echo "building platform offline ..." && mvn -o clean install -Dmaven.test.skip=true'
