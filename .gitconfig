@@ -1,3 +1,6 @@
+[branch]
+    autosetuprebase = always
+
 [core]
     # put global ignore list in home dir
     excludesfile = ~/.gitignore
