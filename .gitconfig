@@ -1,3 +1,17 @@
+[alias]
+  a = add
+  aa = add --all
+  ap = add -p
+  b = branch
+  c = commit -m
+  cl = clean -f
+  d = diff
+  d = diff
+  ds = diff --staged
+  f = fetch
+  p = pull --rebase
+  s = status
+
 [branch]
     autosetuprebase = always
 
