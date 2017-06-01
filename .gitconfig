@@ -18,6 +18,7 @@
   lpf = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   p = pull --rebase
   po = push origin
+  pfo = push --force origin
   r = rebase -i
   s = status
   st = stash
